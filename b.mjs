@@ -22,7 +22,14 @@ import test from "./test.mjs";
 
 function formatName(name){
 let NameTrimmed = name.trim();
-if(NameTrimmed !== String){
+const words = NameTrimmed.split(" ");
+
+for (let i = 0; i < words.length; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+}
+words.join(" ")
+
+if(words !== String){
     return null
 }
 }
