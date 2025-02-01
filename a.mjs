@@ -21,8 +21,8 @@ import test from "./test.mjs";
 // Write your function her.
 
 function multiply(a, b){
-    numA = number(a);
-    numB = number(b);
+    let numA = Number(a);
+    let numB = Number(b);
 
     if (isNaN(numA) || isNaN(numB) || typeof numA !== "number" || typeof numB !== "number") {
         return NaN;
@@ -31,8 +31,6 @@ function multiply(a, b){
         return Infinity
     } else if ( numA == -Infinity || numB == -Infinity){
         return -Infinity
-    } else if ( numA == NaN || numB == NaN ){
-        return undefined
     } else if ( numA == 0 || numB == 0 ){
         return 0
     }
@@ -41,14 +39,16 @@ function multiply(a, b){
 }
 
 //#endregion
+const tests = test("Sum function");
 
-tests.isEqual(sum(1, 2), 2, "Sum of 1 and 2 should be 2");
-tests.isEqual(sum(10, 5), 50, "Sum of 10 and 5 should be 50");
-tests.isEqual(sum(NaN, 7), undefined, "Sum of NaN and 7 should be undefined");
-tests.isEqual(sum(0, 23), 0, "Sum of 0 and 23 should be 0");
-tests.isEqual(sum(infinity, 8), infinity, "Sum of infinity and 8 should be infinity");
-tests.isEqual(sum(-infinity, 4), -infinity, "Sum of infinity and 4 should be -infinity");
-tests.isEqual(sum("3", "8"), 24, "Sum of 3 and 8 should be 24");
+tests.isEqual(multiply(1, 2), 2, "Sum of 1 and 2 should be 2");
+tests.isEqual(multiply(10, 5), 50, "Sum of 10 and 5 should be 50");
+tests.isNotANumber(multiply(NaN, 7), NaN, "Sum of NaN and 7 should be NaN");
+tests.isEqual(multiply(0, 23), 0, "Sum of 0 and 23 should be 0");
+tests.isEqual(multiply(Infinity, 8), Infinity, "Sum of infinity and 8 should be Infinity");
+tests.isEqual(multiply(-Infinity, 4), -Infinity, "Sum of infinity and 4 should be -Infinity");
+tests.isEqual(multiply("3", "8"), 24, "Sum of 3 and 8 should be 24");
+
 
 
 //#region Tests --------------------------------------------------------------------
