@@ -31,8 +31,10 @@ function multiply(a, b){
         return Infinity
     } else if ( numA == -Infinity || numB == -Infinity){
         return -Infinity
+    } else if ( numA == NaN || numB == NaN || numA == 0 || numB == 0 ){
+        return undefined
     }
-    
+
     return numA * numB;
 }
 
