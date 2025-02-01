@@ -20,7 +20,11 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
-
+function formatName(name){
+if(name !== String){
+    return null
+} 
+}
 
 //#endregion
 
