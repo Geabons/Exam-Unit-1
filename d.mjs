@@ -46,7 +46,7 @@ tests.isEqual(guessNumber(10, 15), "Too high", "If target is 10 and guess is 15,
 tests.isEqual(guessNumber(10, 10), "Correct!", "If target is 10 and guess is 10, return 'Correct!'");
 
 // Invalid inputs
-
+tests.isEqual(guessNumber("hello"), null, "String input should return null");
 
 // Edge cases
 tests.isEqual(guessNumber(-4), null, "Negative input should return null");
