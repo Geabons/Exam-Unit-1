@@ -15,8 +15,6 @@ function sequence(n) {
         return null;
     } else if ( n == 0 ){
         return 0
-    } else if ( n == 1 ){
-        return 1
     }
 
     let prev1 = 0, prev2 = 1;
