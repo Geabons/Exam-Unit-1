@@ -30,6 +30,8 @@ function formatName(name) {
 
   if (words == "") {
     return "";
+  } else if (words.includes('[`!@#$%^&*()_+-=[]{};\':"\\|,.<>/?~]/')){
+    return null
   }
 
   for (let i = 0; i < words.length; i++) {
@@ -46,5 +48,5 @@ function formatName(name) {
 const tests = test("FormatName function");
 
 tests.isEqual(formatName("hello world"), "Hello World", "formatted version of hello world should be Hello World");
-
+tests.isEqual(formatName("%&"), "%&", "formatted version of %& should be null");
 //#endregion
