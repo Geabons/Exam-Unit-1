@@ -20,29 +20,31 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
-function formatName(name){
-let NameTrimmed = name.trim();
-const words = NameTrimmed.split(" ");
+function formatName(name) {
+  if (typeof name !== "string") {
+    return null;
+  }
 
-for (let i = 0; i < words.length; i++) {
+  let NameTrimmed = name.trim();
+  const words = NameTrimmed.split(" ");
+
+  if (words == "") {
+    return "";
+  }
+
+  for (let i = 0; i < words.length; i++) {
     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-}
-words.join(" ")
-
-if(words !== String){
-    return null
-}
+  } 
+  return words.join(" ");
 }
 
 //#endregion
 
-
-
-
-
 //#region Tests --------------------------------------------------------------------
 // Write your tests her.
 
+const tests = test("FormatName function");
 
+tests.isEqual(formatName("hello world"), "Hello World", "formatted version of hello world should be Hello World");
 
 //#endregion

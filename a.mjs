@@ -39,7 +39,12 @@ function multiply(a, b){
 }
 
 //#endregion
-const tests = test("Sum function");
+
+
+//#region Tests --------------------------------------------------------------------
+// Write your tests her.
+
+const tests = test("Multiply function");
 
 tests.isEqual(multiply(1, 2), 2, "Sum of 1 and 2 should be 2");
 tests.isEqual(multiply(10, 5), 50, "Sum of 10 and 5 should be 50");
@@ -48,12 +53,5 @@ tests.isEqual(multiply(0, 23), 0, "Sum of 0 and 23 should be 0");
 tests.isEqual(multiply(Infinity, 8), Infinity, "Sum of infinity and 8 should be Infinity");
 tests.isEqual(multiply(-Infinity, 4), -Infinity, "Sum of infinity and 4 should be -Infinity");
 tests.isEqual(multiply("3", "8"), 24, "Sum of 3 and 8 should be 24");
-
-
-
-//#region Tests --------------------------------------------------------------------
-// Write your tests her.
-
-
 
 //#endregion
