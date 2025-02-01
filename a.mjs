@@ -3,7 +3,7 @@ import test from "./test.mjs";
 /*
     Challenge: Implement the `multiply` function.
 
-    The function `multiply` takes an indefinit number of parameters (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+    The function `multiply` takes an indefinite number of parameters (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
     It should return the product of the numbers, with the following constraints:
 
     1. If one or more of the parameters are not valid numbers, the function should return NaN (Not a Number).
@@ -20,7 +20,21 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
+function multiply(a, b){
+    numA = number(a);
+    numB = number(b);
 
+    if (isNaN(numA) || isNaN(numB) || typeof numA !== "number" || typeof numB !== "number") {
+        return NaN;
+
+    } else if ( numA == Infinity ||  numB == Infinity ){
+        return Infinity
+    } else if ( numA == -Infinity || numB == -Infinity){
+        return -Infinity
+    }
+    
+    return numA * numB;
+}
 
 //#endregion
 
