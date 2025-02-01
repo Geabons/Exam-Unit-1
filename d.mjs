@@ -44,6 +44,7 @@ const tests = test("guessNumber function");
 tests.isEqual(guessNumber(10, 5), "Too low", "If target is 10 and guess is 5, return 'Too low'");
 tests.isEqual(guessNumber(10, 15), "Too high", "If target is 10 and guess is 15, return 'Too high'");
 tests.isEqual(guessNumber(10, 10), "Correct!", "If target is 10 and guess is 10, return 'Correct!'");
+tests.isEqual(guessNumber(-5, -8), "Too low", "If target is -5 and guess is -8, return 'Too low'");
 
 // Invalid inputs
 tests.isEqual(guessNumber("hello"), null, "String input should return null");
