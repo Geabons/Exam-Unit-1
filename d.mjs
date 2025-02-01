@@ -24,7 +24,9 @@ import test from "./test.mjs";
 // Write your function her.
 
 function guessNumber(target, guess) {
-
+if ( isNaN(target) || isNaN(guess) || Number.isInteger(target) || Number.isInteger(guess)){
+    return null
+}
 }
 
 
