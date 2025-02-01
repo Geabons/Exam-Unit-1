@@ -49,4 +49,7 @@ const tests = test("FormatName function");
 
 tests.isEqual(formatName("hello world"), "Hello World", "formatted version of hello world should be Hello World");
 tests.isEqual(formatName("%&"), "%&", "formatted version of %& should be null");
+tests.isEqual(formatName(124), null, "formatted version of 124 should be null");
+tests.isEqual(formatName("   hello"), "Hello", "formatted version of    hello should be Hello");
+tests.isEqual(formatName(" "), "", "formatted version of   should be ");
 //#endregion
