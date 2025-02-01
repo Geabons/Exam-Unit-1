@@ -11,7 +11,22 @@ import test from "./test.mjs";
 */
 
 function sequence(n) {
+    if (isNaN(n) || isNaN(n) || typeof n !== "number" || typeof n !== "number" || !Number.isInteger(n) || n < 0) {
+        return null;
+    } else if ( n == 0 ){
+        return 0
+    } else if ( n == 1 ){
+        return 1
+    }
 
+    let prev1 = 0, prev2 = 1;
+
+    for (let i = 2; i <= n; i++) {
+      let current = prev1 + prev2;
+      prev1 = prev2;
+      prev2 = current;
+    }
+    return prev2
 }
 
 //#region Tests --------------------------------------------------------------------

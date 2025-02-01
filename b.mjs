@@ -26,17 +26,18 @@ function formatName(name) {
   }
 
   let NameTrimmed = name.trim();
-  const words = NameTrimmed.split(" ");
 
-  if (words == "") {
+  if (NameTrimmed == "") {
     return "";
-  } else if (words.includes('[`!@#$%^&*()_+-=[]{};\':"\\|,.<>/?~]/')){
-    return null
+  } else if (NameTrimmed.includes("[`!@#$%^&*()_+-=[]{};':\"\\|,.<>/?~]/")) {
+    return null;
   }
+
+  const words = NameTrimmed.split(" ");
 
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-  } 
+  }
   return words.join(" ");
 }
 
@@ -47,9 +48,17 @@ function formatName(name) {
 
 const tests = test("FormatName function");
 
-tests.isEqual(formatName("hello world"), "Hello World", "formatted version of hello world should be Hello World");
+tests.isEqual(
+  formatName("hello world"),
+  "Hello World",
+  "formatted version of hello world should be Hello World"
+);
 tests.isEqual(formatName("%&"), "%&", "formatted version of %& should be null");
 tests.isEqual(formatName(124), null, "formatted version of 124 should be null");
-tests.isEqual(formatName("   hello"), "Hello", "formatted version of    hello should be Hello");
+tests.isEqual(
+  formatName("   hello"),
+  "Hello",
+  "formatted version of    hello should be Hello"
+);
 tests.isEqual(formatName(" "), "", "formatted version of   should be ");
 //#endregion
