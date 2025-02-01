@@ -21,9 +21,10 @@ import test from "./test.mjs";
 // Write your function her.
 
 function formatName(name){
-if(name !== String){
+let NameTrimmed = name.trim();
+if(NameTrimmed !== String){
     return null
-} 
+}
 }
 
 //#endregion
